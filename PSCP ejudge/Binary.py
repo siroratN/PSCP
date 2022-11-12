@@ -1,7 +1,7 @@
 """ binary """
-def numberbinary(n):
+def converttonum(number):
     """ cal """
-    if(n > 1):
-        numberbinary(n//2)
-    print(n%2, end='')
-numberbinary(int(input()))
+    if number > 1:
+        converttonum(number//2)
+    print(number%2, end='')
+converttonum(int(input()))
