@@ -1,15 +1,33 @@
 """ CaesarV1 """
+import string
+def caesar(raw, shift):
+    """Caesar"""
+    result = ""
+    for i in raw:
+        if i in string.ascii_letters:
+            if i.isupper():
+                c_index = ord(i) - ord("A")
+                new_index = (c_index + shift) % 26
+                new_unicode = new_index + ord("A")
+                new_char = chr(new_unicode)
+                result = result + new_char
+            else:
+                if i != " ":
+                    c_index = ord(i) - ord("a")
+                    new_index = (c_index + shift) % 26
+                    new_unicode = new_index + ord("a")
+                    new_char = chr(new_unicode)
+                    result = result + new_char
+                else:
+                    result += i
+        else:
+            result += i
+    return result
+
 def main():
-    """ CaesarV1 """
-    txt = input().replace(".", "")
-    num = int(input())
-    before = []
-    after = []
-    for i in txt:
-        ans = ord(i)+num
-        before.append(ans)
-    for j in before:
-        after.append(chr(j))
-    print(*after)
+    """Main function"""
+    key = int(input())
+    word = input()
+    result = caesar(word, key)
+    print(result)
 main()
-#ไม่เส้ด
