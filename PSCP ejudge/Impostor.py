@@ -11,7 +11,7 @@ def main():
             break
         cutplayer = json.loads(txt)
         player.update(cutplayer)
-        ansplayer = sorted(player)
+    ansplayer = sorted(player)
     while True:
         txt = input()
         if txt == "End":
