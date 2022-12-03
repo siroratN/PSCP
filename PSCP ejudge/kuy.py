@@ -13,11 +13,15 @@ def main():
         for i in sara:
             indexsara = txt.find(i, k, len(txt))
             indexsaralist.append(indexsara)
+    indexsaralist.sort()
+    saraans = txtlist[indexsaralist[-1]]*3
+    txtlist.insert(indexsaralist[-1], saraans)
+    for i in txtlist:
+        if i in sara:
             count += 1
+        else:
+            count == 0
     if count > 0:
-        indexsaralist.sort()
-        saraans = txtlist[indexsaralist[-1]]*3
-        txtlist.insert(indexsaralist[-1], saraans)
         print(*txtlist, sep="")
     else:
         print(txt)
